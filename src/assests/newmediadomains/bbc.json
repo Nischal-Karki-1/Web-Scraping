@@ -1,0 +1,15 @@
+[
+    {
+        "domain": "bbc.com",
+        "URL_paths": [
+            {
+                "index": "CC-MAIN-2025-13",
+                "url_paths": [
+                    "https://player.bbc.com/robots.txt"
+                ]
+            }
+        ],
+        "total_lines": 1,
+        "timestamp": "2025-04-23 02:21:51"
+    }
+]
