@@ -5,6 +5,7 @@ import requests
 import logging
 import os
 import sys
+import datetime
 from http.client import RemoteDisconnected
 from urllib.parse import quote_plus
 from requests.exceptions import (
@@ -13,7 +14,6 @@ from requests.exceptions import (
     Timeout, 
     RequestException,
     TooManyRedirects,
-
     ProxyError,
     SSLError
 )
@@ -26,8 +26,6 @@ from urllib3.exceptions import (
     NewConnectionError
 )
 from socket import error as SocketError
-import errno
-
 
 # Set up logging
 import logging
@@ -64,19 +62,19 @@ logger.info("Logging system initialized successfully")
 
 SERVER = 'https://index.commoncrawl.org/'
 user_agents = [
-    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)",
-    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/8.0 Mobile/12F70 Safari/600.1.4 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12F70 Safari/600.1.4 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
     "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)",
-    "Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1)",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1; +http://www.apple.com/go/applebot)",
     "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)",
-    "Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)",
+    
 ]
 index = 0
 direction = 1
 
 # Files for state management
 STATE_FILE = 'crawler_state.json'
-RESULTS_FILE = 'all_domain_records.json'
 TEMP_STATE_FILE = 'temp_crawler_state.json'  # For atomic state updates
 
 # Constants for retry settings
@@ -190,7 +188,7 @@ def make_request_with_retry(url, session=None, max_retries=MAX_RETRIES, backoff_
     return None
 
 def search_cc_index(domain, INDICES):
-    """Search the Common Crawl index for a specific domain with robust error handling."""
+    """Search the Common Crawl index for a specific domain with robust error handling and interruption safety."""
     # Create a wildcard search for the domain
     search_url = f"*.{domain}/*"
     URL_paths = []
@@ -198,55 +196,113 @@ def search_cc_index(domain, INDICES):
     session = create_robust_session()
     
     encoded_url = quote_plus(search_url)
-    for INDEX_NAME in INDICES:
-        # Construct the index query URL
-        delay = random.uniform(20, 30)
-        print(f'Wating processing: {INDEX_NAME}')
-        logger.info(f'Waiting {delay:.2f}s before processing: {INDEX_NAME}')
-        time.sleep(delay)
-        index_url = f'{SERVER}{INDEX_NAME}-index?url={encoded_url}&output=json'
-        
-        logger.info(f"Querying index at: {index_url}")
-        
-        content = None
-        try:
-            print(f"Querying index at: {index_url}")
-            content = make_request_with_retry(index_url, session=session)
-        except Exception as e:
-            logger.error(f"Fatal error querying {INDEX_NAME}: {e}")
-            # Try to create a new session for next index
-            session = create_robust_session()
-            continue
-            
-        if not content:
-            logger.warning(f"Skipping index {INDEX_NAME} due to failed requests")
-            continue
-            
-        try:
-            lines = content.strip().split('\n')
-            total_lines += len(lines)
-            
-            for line in lines:
-                if line.strip():
-                    try:
-                        record = json.loads(line)
-                        if record.get("status") == '200':
-                            URL_paths.append(record.get("url"))
-                    except json.JSONDecodeError:
-                        logger.warning(f"Could not parse line: {line[:100]}...")
-        except Exception as e:
-            logger.error(f"Error processing response: {e}")
     
+    logger.info(f"Starting search for domain: {domain} across {len(INDICES)} indices")
+    
+    # Track progress for better logging
+    completed_indices = 0
+    
+    for idx, INDEX_NAME in enumerate(INDICES):
+        try:
+            # Construct the index query URL
+            delay = random.uniform(20, 30)
+            logger.info(f'Processing index {idx + 1}/{len(INDICES)}: {INDEX_NAME} for domain {domain}')
+            logger.info(f'Waiting {delay:.2f}s before processing: {INDEX_NAME}')
+            
+            # Check for interruption during delay
+            start_time = time.time()
+            while time.time() - start_time < delay:
+                time.sleep(1)  # Sleep in smaller chunks to allow interruption
+                # This allows KeyboardInterrupt to be caught more quickly
+            
+            index_url = f'{SERVER}{INDEX_NAME}-index?url={encoded_url}&output=json'
+            
+            logger.info(f"Querying index at: {index_url}")
+            
+            content = None
+            try:
+                print(f"Querying index {idx + 1}/{len(INDICES)}: {INDEX_NAME}")
+                content = make_request_with_retry(index_url, session=session)
+            except KeyboardInterrupt:
+                logger.warning(f"Keyboard interrupt during request for {INDEX_NAME}")
+                # Don't return partial results - let the interruption bubble up
+                raise  # Re-raise to be caught by outer handler
+            except Exception as e:
+                logger.error(f"Fatal error querying {INDEX_NAME}: {e}")
+                # Try to create a new session for next index
+                session = create_robust_session()
+                continue
+                
+            if not content:
+                logger.warning(f"Skipping index {INDEX_NAME} due to failed requests")
+                continue
+            
+            # Process the content and organize by index
+            try:
+                lines = content.strip().split('\n')
+                index_urls = []
+                
+                logger.info(f"Processing {len(lines)} lines from {INDEX_NAME}")
+                
+                for line_idx, line in enumerate(lines):
+                    if line.strip():
+                        try:
+                            record = json.loads(line)
+                            if record.get("status") == '200':
+                                index_urls.append(record.get("url"))
+                        except json.JSONDecodeError:
+                            logger.warning(f"Could not parse line {line_idx + 1}: {line[:100]}...")
+                    
+                    # Periodic interruption check for large responses
+                    if line_idx > 0 and line_idx % 1000 == 0:
+                        logger.debug(f"Processed {line_idx}/{len(lines)} lines from {INDEX_NAME}")
+                
+                # Add this index's data to URL_paths if we found any URLs
+                if index_urls:
+                    URL_paths.append({
+                        "index": INDEX_NAME,
+                        "url_paths": index_urls
+                    })
+                    total_lines += len(lines)
+                    logger.info(f"Successfully processed {INDEX_NAME}: found {len(index_urls)} valid URLs from {len(lines)} total lines")
+                else:
+                    logger.info(f"No valid URLs found in {INDEX_NAME}")
+                
+                # Mark this index as completed
+                completed_indices += 1
+                logger.info(f"Completed {completed_indices}/{len(INDICES)} indices for domain {domain}")
+                    
+            except KeyboardInterrupt:
+                logger.warning(f"Keyboard interrupt during content processing for {INDEX_NAME}")
+                logger.info(f"Completed {completed_indices}/{len(INDICES)} indices before interruption")
+                # Don't return partial results for domain processing
+                raise  # Re-raise to be caught by outer handler
+            except Exception as e:
+                logger.error(f"Error processing response for {INDEX_NAME}: {e}")
+        
+        except KeyboardInterrupt:
+            logger.warning(f"Search interrupted at index {INDEX_NAME} for domain {domain}")
+            logger.info(f"Completed {completed_indices}/{len(INDICES)} indices before interruption")
+            # For domain-level processing, we want all-or-nothing
+            # Don't return partial results - let the interruption bubble up to main()
+            raise
+        except Exception as e:
+            logger.error(f"Unexpected error processing index {INDEX_NAME}: {e}")
+            continue
+    
+    logger.info(f"Successfully completed search for domain {domain}: {len(URL_paths)} indices processed, {total_lines} total lines")
     return URL_paths, total_lines
 
-def save_state(data, current_index, current_domain_index=None, current_domain=None):
+
+def save_state(current_file_idx, current_domain_idx, current_domain=None, total_files=None):
     """Save current processing state to resume later"""
     state = {
-        'last_processed_index': current_index,
-        'last_domain_index': current_domain_index,
+        'last_processed_file_idx': current_file_idx,
+        'last_processed_domain_idx': current_domain_idx,
         'last_domain': current_domain,
-        'timestamp': time.time(),
-        'remaining_domains': len(data) - current_index - 1 if current_index < len(data) else 0
+        'timestamp': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        'total_files': total_files,
+        'remaining_files': total_files - current_file_idx - 1 if total_files and current_file_idx < total_files else 0
     }
     
     # Atomic write - first write to temporary file then rename
@@ -256,8 +312,8 @@ def save_state(data, current_index, current_domain_index=None, current_domain=No
     # Atomic rename operation
     os.replace(TEMP_STATE_FILE, STATE_FILE)
     
-    logger.info(f"Saved state at index {current_index}, domain: {current_domain}")
-
+    logger.info(f"Saved state at file {current_file_idx}, domain {current_domain_idx}: {current_domain}")
+    
 def load_state():
     """Load previous processing state"""
     if not os.path.exists(STATE_FILE):
@@ -268,7 +324,7 @@ def load_state():
         with open(STATE_FILE, 'r') as f:
             state = json.load(f)
         
-        logger.info(f"Loaded previous state: last processed index {state.get('last_processed_index')}, domain: {state.get('last_domain')}")
+        logger.info(f"Loaded previous state: file {state.get('last_processed_file_idx')}, domain {state.get('last_processed_domain_idx')}, last domain: {state.get('last_domain')}")
         return state
     except Exception as e:
         logger.error(f"Error loading state: {e}")
@@ -278,117 +334,197 @@ def load_state():
             os.rename(STATE_FILE, backup_file)
             logger.info(f"Created backup of corrupted state file: {backup_file}")
         return None
-
-def load_existing_results():
-    """Load existing results to continue appending"""
-    if not os.path.exists(RESULTS_FILE):
-        return []
     
-    try:
-        with open(RESULTS_FILE, 'r') as f:
-            return json.load(f)
-    except Exception as e:
-        logger.error(f"Error loading existing results: {e}")
-        # Create backup of potentially corrupted file
-        if os.path.exists(RESULTS_FILE):
-            backup_file = f"{RESULTS_FILE}.bak.{int(time.time())}"
-            os.rename(RESULTS_FILE, backup_file)
-            logger.info(f"Created backup of results file: {backup_file}")
-        return []
-
-def save_results(records):
-    """Save results with atomic write to prevent corruption"""
-    # Write to temporary file first
-    temp_file = f"{RESULTS_FILE}.tmp"
-    with open(temp_file, 'w') as f:
-        json.dump(records, f, indent=4)
     
-    # Then do an atomic replace
-    os.replace(temp_file, RESULTS_FILE)
-    logger.info(f"Saved {len(records)} records to {RESULTS_FILE}")
+def update_domain_json_file_with_new_commoncrawl_indices(domain_data, new_indices_data, new_total_lines):
+    """
+    Update domain data with new indices using stack approach (LIFO)
+    
+    Args: 
+        domain_data: Existing domain data dictionary
+        new_indices_data: List of new index entries with structure [{"index": "name", "url_paths": [...]}]
+        new_total_lines: Total lines from new indices to add
+    
+    Returns:
+        Updated domain data dictionary
+    """    
+        
+    # Ensure URL_paths exists
+    if 'URL_paths' not in domain_data:
+        domain_data['URL_paths'] = []
+        
+    # Get the existing indices
+    existing_indices = {item['index'] for item in domain_data.get('URL_paths', [])}
+    
+    # Collect new indices to add (in reverse order for stack behavior)
+    new_entries_to_add = []
+    
+    for index_entry in new_indices_data:
+        index_name = index_entry.get('index')
+        url_paths = index_entry.get('url_paths', [])
+        
+        if index_name and index_name not in existing_indices:
+            new_index_entry = {
+                "index": index_name,
+                "url_paths": url_paths
+            }
+            new_entries_to_add.append(new_index_entry)
+            logger.info(f"Prepared new index for stack addition: {index_name} with {len(url_paths)} URLs")
+        else:
+            logger.info(f"Index {index_name} already exists, skipping")
+    
+    # Add new entries to the TOP of the list (stack behavior - LIFO)
+    # Insert in original order so that the last item in the list goes to the top
+    for new_entry in new_entries_to_add:
+        domain_data['URL_paths'].insert(0, new_entry)
+        logger.info(f"Added index to top of stack: {new_entry['index']}")
+    
+    # Update total_lines
+    current_total = domain_data.get('total_lines', 0)
+    domain_data['total_lines'] = current_total + new_total_lines
+    
+    # Update timestamp to today
+    domain_data['timestamp'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    return domain_data
+
 
 def main():
-    input_url = './URL1.json'
+    
     INDICES = [
-        "CC-MAIN-2025-13", "CC-MAIN-2025-08", "CC-MAIN-2025-05", "CC-MAIN-2024-51", 
-        "CC-MAIN-2024-46", "CC-MAIN-2024-42", "CC-MAIN-2024-38", "CC-MAIN-2024-33", 
-        "CC-MAIN-2024-30", "CC-MAIN-2024-26", "CC-MAIN-2024-22", "CC-MAIN-2024-18", 
-        "CC-MAIN-2024-10", "CC-MAIN-2023-50", "CC-MAIN-2023-40"
+        "CC-MAIN-2025-18", "CC-MAIN-2025-21"
     ]
-    
+
+    input_url = './assets/newmediadomains'
+
     try:
-        with open(input_url, 'r') as file:
-            data = json.load(file)
+        files = os.listdir(input_url)
+        json_files = [f for f in files if f.endswith('.json')]
     except Exception as e:
-        logger.error(f"Failed to load input data: {e}")
+        logger.error(f'Failed to load the newmediadomains folder: {e}')
         return
-    
+
     # Load previous state if exists
     state = load_state()
-    start_idx = state['last_processed_index'] + 1 if state and 'last_processed_index' in state else 0
-    
-    # Load existing results
-    all_records = load_existing_results()
-    
-    logger.info(f"Starting to process {len(data)} domains from index {start_idx}")
-    
+    start_file_idx = state.get('last_processed_file_idx', 0) if state else 0
+    # FIXED: Resume from the same domain (don't add +1)
+    start_domain_idx = state.get('last_processed_domain_idx', -1) if state else 0
+    # Handle the initial case
+    if start_domain_idx < 0:
+        start_domain_idx = 0
+
+    logger.info(f"Starting to process {len(json_files)} JSON files from file index {start_file_idx}, domain index {start_domain_idx}")
+
     try:
-        # Process each domain
-        for i in range(start_idx, len(data)):
-           
-            domain_data = data[i]
-            domain = domain_data.get('URL')
-            print(f"Waiting for {domain}")
-            logger.info(f"Processing {i+1}/{len(data)}: {domain}")
+        count = 0
+        
+        # For each file in the folder newmediadomains (starting from the saved file index)
+        for file_idx in range(start_file_idx, len(json_files)):
+            filename = json_files[file_idx]
+            file_path = os.path.join(input_url, filename)
+            
+            logger.info(f"Processing file {file_idx + 1}/{len(json_files)}: {filename}")
             
             try:
-                # Search Common Crawl index for this domain
-                URL_paths, total_lines = search_cc_index(domain, INDICES)
-                
-                # Create record with domain info
-                record = {
-                    "id": i,
-                    "domain": domain,
-                    "URL_paths": URL_paths,
-                    "total_response_lines": total_lines
-                }
-                
-                # Add to our collection
-                all_records.append(record)
-                
-                # Save results incrementally with atomic write
-                save_results(all_records)
-                
-                # Save state after each successful processing
-                save_state(data, i, None, domain)
-                
-                logger.info(f"Successfully processed domain: {domain} - Found {len(URL_paths)} URLs from {total_lines} response lines")
-                
-                # Add delay between domains
-                if i < len(data) - 1:  # No need to delay after the last domain
-                    delay = random.uniform(50,60 )
-                    logger.info(f"Waiting {delay:.2f} seconds before next domain...")
-                    time.sleep(delay)
-                    
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    data = json.load(file)
             except Exception as e:
-                logger.error(f"Error processing domain {domain}: {e}", exc_info=True)
-                save_state(data, i-1, None, domain)  # Save state before the error
-                # Continue with next domain
+                logger.error(f'Failed to load file {filename}: {e}')
+                # Save state and continue to next file - no domain was processed
+                save_state(file_idx, -1, None, len(json_files))
+                continue
+                
+            # Track if the file was modified
+            file_modified = False
+            
+            # Determine starting domain index (only for the resumed file)
+            domain_start_idx = start_domain_idx if file_idx == start_file_idx else 0
+            
+            try:
+                # Process each domain in the current file
+                for domain_idx in range(domain_start_idx, len(data)):
+                    if domain_idx < len(data) and data[domain_idx] and isinstance(data[domain_idx], dict):
+                        domain_data = data[domain_idx]
+                        domain = domain_data.get('domain', '')
+                      
+                        logger.info(f"Processing file {file_idx + 1}/{len(json_files)}, domain {domain_idx + 1}/{len(data)}: {domain}")
+                        
+                        # CRITICAL CHANGE: Don't save state here - only save after complete domain processing
+                        domain_processing_successful = False
+                        
+                        try:
+                            logger.info(f"Starting processing of all indices for domain: {domain}")
+                            
+                            # Search Common Crawl index for this domain (processes ALL indices)
+                            URL_paths, total_lines = search_cc_index(domain, INDICES)
+                            
+                            if URL_paths and total_lines > 0:
+                                # Update the domain data in the current file data
+                                data[domain_idx] = update_domain_json_file_with_new_commoncrawl_indices(
+                                    domain_data, URL_paths, total_lines
+                                )
+                                file_modified = True
+                                
+                                logger.info(f"Successfully updated domain: {domain} - Added {len(URL_paths)} new indices with {total_lines} total lines")
+                            else:
+                                logger.info(f"No new data found for domain: {domain}")
+                            
+                            # Mark as successful only if we reach this point
+                            domain_processing_successful = True
+                            logger.info(f"Completed processing all indices for domain: {domain}")
+                            
+                        except Exception as e:
+                            logger.error(f"Error processing domain {domain}: {e}", exc_info=True)
+                            # Don't save state - we want to retry this domain
+                            logger.warning(f"Domain {domain} processing failed - will retry on resume")
+                            continue
+                        
+                        # CRITICAL: Only save state after successful completion of ALL indices for this domain
+                        if domain_processing_successful:
+                            save_state(file_idx, domain_idx, domain, len(json_files))
+                            logger.info(f"Saved state after successful completion of domain: {domain}")
+                            
+                            # Add delay between domains (only after successful processing)
+                            if domain_idx < len(data) - 1:
+                                delay = random.uniform(50, 60)
+                                logger.info(f"Waiting {delay:.2f} seconds before next domain...")
+                                time.sleep(delay)
+                        
+                    else:
+                        logger.warning(f'Domain {domain_idx}: Not found or invalid structure in {filename}')
+                        # For invalid domains, we can save state to skip them
+                        save_state(file_idx, domain_idx, f"INVALID_DOMAIN_{domain_idx}", len(json_files))
+                        
+                    count += 1
+                
+                # Save the updated file if it was modified
+                if file_modified:
+                    try:
+                        with open(file_path, 'w', encoding='utf-8') as file:
+                            json.dump(data, file, indent=4, ensure_ascii=False)
+                        logger.info(f"Saved updated file: {filename}")
+                    except Exception as e:
+                        logger.error(f"Failed to save file {filename}: {e}")
+            
+                # Reset domain start index for subsequent files
+                start_domain_idx = 0
+               
+            except Exception as e:
+                logger.error(f'Failed to process file {filename}: {e}')
+                # Don't advance - let it retry the same file
+                continue
+                
+        logger.info(f"Processing completed. Total domains processed: {count}")
                 
     except KeyboardInterrupt:
         logger.warning("Process interrupted by user")
-        current_i = i if 'i' in locals() else start_idx
-        save_state(data, current_i-1 if current_i > 0 else 0, None, domain if 'domain' in locals() else None)
-        logger.info("State saved, you can resume later")
+        logger.info("State saved at last successfully completed domain. Incomplete domain will be retried on resume.")
     except Exception as e:
         logger.error(f"Fatal error in main process: {e}", exc_info=True)
-        if 'i' in locals() and 'domain' in locals():
-            save_state(data, i-1, None, domain)
     finally:
-        # Final save
-        if 'all_records' in locals():
-            logger.info(f"Process completed or interrupted. Processed {len(all_records)} domains.")
-
+        logger.info(f"Process completed. Total domains processed: {count if 'count' in locals() else 0}")
+        
+        
 def resume_from_crash():
     """Function to resume processing after a crash"""
     logger.info("Attempting to resume from previous crash...")
