@@ -6,6 +6,7 @@ import logging
 import os
 import sys
 import datetime
+import asyncio
 from http.client import RemoteDisconnected
 from urllib.parse import quote_plus
 from requests.exceptions import (
@@ -53,7 +54,7 @@ console_handler.setFormatter(formatter)
 # Set up the root logger
 root.setLevel(logging.INFO)
 root.addHandler(file_handler)
-root.addHandler(console_handler)
+
 
 # Create our named logger
 logger = logging.getLogger(__name__)
@@ -63,13 +64,11 @@ logger.info("Logging system initialized successfully")
 
 SERVER = 'https://index.commoncrawl.org/'
 user_agents = [
-    
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/113.0",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:113.0) Gecko/20100101 Firefox/113.0",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36"
-    
 ]
 index = 0
 direction = 1
@@ -83,9 +82,6 @@ MAX_RETRIES = 12
 INITIAL_BACKOFF = 2
 MAX_BACKOFF = 300  
 SESSION_RESET_THRESHOLD = 4 
-
-import logging
-from urllib.parse import urlparse, urljoin
 
 def filter_url_path_before_storing_into_database(domain, url_paths):
     filtered_url_paths = []
@@ -120,60 +116,58 @@ def filter_url_path_before_storing_into_database(domain, url_paths):
 
     return filtered_url_paths
 
-
-
-
-def insert_into_url_registry_table(conn, domain_name, timestamp, index, url_paths):
+async def insert_into_url_registry_table(conn, domain_name, timestamp, index, url_paths):
     """
-    Batch insert with detailed feedback about insertions vs conflicts
+    Async batch insert with detailed feedback about insertions vs conflicts using psycopg3
     """
     if not url_paths:
         logger.info("No URLs to insert")
         return {"inserted": 0, "duplicates": 0, "total": 0}
     
-    data_to_insert = [
-        (domain_name, timestamp, index, url_path, 'pending') 
-        for url_path in url_paths
-    ]
-    
-    with conn.transaction():
-        with conn.cursor() as cur:
-            
-            cur.executemany(
-                """
-                INSERT INTO url_registry (domain, accessTimestamp, index, urlPath, status)
-                VALUES (%s, %s, %s, %s, %s)
-                ON CONFLICT (urlPath) DO UPDATE SET
-                    domain = EXCLUDED.domain  -- This ensures rowcount is accurate
-                WHERE url_registry.urlPath IS NULL;  -- This condition will never be true for existing rows
-                """,
-                data_to_insert
+    try:
+        async with conn.transaction():
+            # Get count of existing URLs before insertion
+            cur = await conn.execute(
+                "SELECT COUNT(*) FROM url_registry WHERE urlPath = ANY(%s)",
+                (url_paths,)
             )
+            existing_before = (await cur.fetchone())[0]
             
-            # Now get accurate counts
-            rows_affected = cur.rowcount
+            # Use cursor.executemany for batch insert
+            async with conn.cursor() as cur:
+                await cur.executemany(
+                    """
+                    INSERT INTO url_registry (domain, accessTimestamp, index, urlPath, status)
+                    VALUES (%s, %s, %s, %s, %s)
+                    ON CONFLICT (urlPath) DO NOTHING
+                    """,
+                    [(domain_name, timestamp, index, url_path, 'pending') for url_path in url_paths]
+                )
             
-            # Count actual new insertions vs updates (conflicts)
-            cur.execute(
-                """
-                SELECT COUNT(*) FROM url_registry 
-                WHERE urlPath = ANY(%s) AND domain = %s AND index = %s
-                """,
-                (url_paths, domain_name, index)
+            # Get count after insertion
+            cur = await conn.execute(
+                "SELECT COUNT(*) FROM url_registry WHERE urlPath = ANY(%s)",
+                (url_paths,)
             )
-            total_existing = cur.fetchone()[0]
+            existing_after = (await cur.fetchone())[0]
             
-            inserted = rows_affected
-            duplicates = len(url_paths) - inserted
+            # Calculate results
+            total_urls = len(url_paths)
+            duplicates = existing_before
+            inserted = existing_after - existing_before
             
-            logger.info(f"Batch insert results: {inserted} new URLs inserted, {duplicates} duplicates skipped, {len(url_paths)} total processed for domain {domain_name}")
+            logger.info(f"Batch insert results: {inserted} new URLs inserted, {duplicates} duplicates skipped, {total_urls} total processed for domain {domain_name}")
             
             return {
                 "inserted": inserted,
                 "duplicates": duplicates, 
-                "total": len(url_paths)
+                "total": total_urls
             }
-
+            
+    except Exception as e:
+        logger.error(f"Error during batch insert for domain {domain_name}: {e}")
+        raise
+    
 def get_next_agent():
     """Rotate through user agents to avoid being blocked"""
     global index, direction
@@ -206,7 +200,6 @@ def make_request_with_retry(url, session=None, max_retries=MAX_RETRIES, backoff_
     while retries < max_retries:
         try:
             myagent = get_next_agent()
-            print(f'Using agent: {myagent}')
             logger.info(f'Using agent: {myagent}')
             
             headers = {
@@ -395,86 +388,74 @@ def save_domain_file(file_path, data_to_save, filename):
             except:
                 pass
         return False
-    
-<<<<<<< HEAD
-def update_domain_file_with_new_index_data(conn, domain_file_data, new_index_data):
-=======
-def update_domain_file_with_new_index_data(domain_file_data, new_index_data):
->>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
-    """
-    Update domain file data with new index data using stack approach (LIFO)
-    
-    Args: 
-<<<<<<< HEAD
-        conn: Database connection object
-=======
->>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
-        domain_file_data: Existing domain file data dictionary
-        new_index_data: New index entry with structure {"index": "name", "url_paths": [...]}
-    
-    Returns:
-        Updated domain file data dictionary, total_lines_added
-    """    
-        
-    # Ensure URL_paths exists
-    if 'URL_paths' not in domain_file_data:
-        domain_file_data['URL_paths'] = []
-        
-    # Get the existing indices
-    existing_indices = {item['index'] for item in domain_file_data.get('URL_paths', [])}
-    
-    index_name = new_index_data.get('index')
-    url_paths = new_index_data.get('url_paths', [])
-    total_lines_added = len(url_paths)
-    
-    if index_name and index_name not in existing_indices:
-<<<<<<< HEAD
-        # Get domain from domain_file_data
-        domain = domain_file_data.get('domain', '')
-        
-        # Call filtered_url function
-        filtered_url_paths = filter_url_path_before_storing_into_database(domain, url_paths)
 
-        if filtered_url_paths:
-            # Insert into database - now passing the list correctly
-            try:
-                insert_into_url_registry_table(  # Using batch version for better performance
-                    conn, 
-                    domain_name=domain,
-                    timestamp=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 
-                    index=index_name, 
-                    url_paths=filtered_url_paths  # This is now correctly a list
-                )
-            except Exception as e:
-                logger.error(f"Failed to insert URLs into database: {e}")
+async def update_domain_file_with_new_index_data(domain_file_data, new_index_data):
+   
+    # Get database connection
+    conn = None
+    try:
+        conn = await get_connection()
+        
+        # Ensure URL_paths exists
+        if 'URL_paths' not in domain_file_data:
+            domain_file_data['URL_paths'] = []
+            
+        # Get the existing indices
+        existing_indices = {item['index'] for item in domain_file_data.get('URL_paths', [])}
+        
+        index_name = new_index_data.get('index')
+        url_paths = new_index_data.get('url_paths', [])
+        total_lines_added = len(url_paths)
+        
+        if index_name and index_name not in existing_indices:
+            # Get domain from domain_file_data
+            domain = domain_file_data.get('domain', '')
+            
+            # Call filtered_url function
+            filtered_url_paths = filter_url_path_before_storing_into_database(domain, url_paths)
+
+            if filtered_url_paths:
+                # Insert into database - now using await
+                try:
+                    await insert_into_url_registry_table(
+                        conn, 
+                        domain_name=domain,
+                        timestamp=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 
+                        index=index_name, 
+                        url_paths=filtered_url_paths
+                    )
+                except Exception as e:
+                    logger.error(f"Failed to insert URLs into database: {e}")
+                    raise  # Re-raise to handle connection cleanup
              
 
-        # Add new entry to the TOP of the list (stack behavior - LIFO)
-        domain_file_data['URL_paths'].insert(0, new_index_data)
-        logger.info(f"Added index to top of stack: {index_name} with {len(url_paths)} URLs")
-        
-=======
-        # Add new entry to the TOP of the list (stack behavior - LIFO)
-        domain_file_data['URL_paths'].insert(0, new_index_data)
-        logger.info(f"Added index to top of stack: {index_name} with {len(url_paths)} URLs")
-        
->>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
-        # Update total_lines
-        current_total = domain_file_data.get('total_lines', 0)
-        domain_file_data['total_lines'] = current_total + total_lines_added
-        
-        # Update timestamp to today
-        domain_file_data['timestamp'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
-        return domain_file_data, total_lines_added
-    else:
-        logger.info(f"Index {index_name} already exists, skipping")
-        return domain_file_data, 0
+            # Add new entry to the TOP of the list (stack behavior - LIFO)
+            domain_file_data['URL_paths'].insert(0, new_index_data)
+            logger.info(f"Added index to top of stack: {index_name} with {len(url_paths)} URLs")
+            
+            # Update total_lines
+            current_total = domain_file_data.get('total_lines', 0)
+            domain_file_data['total_lines'] = current_total + total_lines_added
+            
+            # Update timestamp to today
+            domain_file_data['timestamp'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            return domain_file_data, total_lines_added
+        else:
+            logger.info(f"Index {index_name} already exists, skipping")
+            return domain_file_data, 0
+            
+    except Exception as e:
+        logger.error(f"Error updating domain file with new index data: {e}")
+        raise
+    finally:
+        # Always return connection to pool
+        if conn:
+            await return_connection(conn)
 
-def main():
-    
+async def main():
     INDICES = [
-        "CC-MAIN-2025-18", "CC-MAIN-2025-21"
+       "CC-MAIN-2025-05", "CC-MAIN-2025-08", "CC-MAIN-2025-13", "CC-MAIN-2025-18", "CC-MAIN-2025-21"
     ]
 
     input_url = './assets/newmediadomains'
@@ -565,10 +546,8 @@ def main():
                     delay = random.uniform(20, 30)
                     logger.info(f'Waiting {delay:.2f}s before processing index: {index_name}')
                     
-                    # Check for interruption during delay
-                    start_time = time.time()
-                    while time.time() - start_time < delay:
-                        time.sleep(1)  # Sleep in smaller chunks to allow interruption
+                    # Use asyncio.sleep instead of time.sleep for async context
+                    await asyncio.sleep(delay)
                     
                     index_processing_successful = False
                     
@@ -579,8 +558,8 @@ def main():
                         index_data, total_lines = search_single_cc_index(domain, index_name)
                         
                         if index_data and total_lines > 0:
-                            # Update the domain file data
-                            domain_file_data, lines_added = update_domain_file_with_new_index_data(
+                            # Update the domain file data - now using await
+                            domain_file_data, lines_added = await update_domain_file_with_new_index_data(
                                 domain_file_data, index_data
                             )
                             
@@ -621,7 +600,6 @@ def main():
                         current_processed_indices.append(index_name)
                         
                         # Save state with current position
-                        print(f'Domain: {domain}')
                         save_state(file_idx, index_position, current_processed_indices, domain, len(json_files))
                         logger.info(f"Saved state after successful completion of index: {index_name}")
                         
@@ -629,7 +607,7 @@ def main():
                         if index_position < len(INDICES) - 1:
                             delay = random.uniform(50, 60)
                             logger.info(f"Waiting {delay:.2f} seconds before next index...")
-                            time.sleep(delay)
+                            await asyncio.sleep(delay)  # Use asyncio.sleep
                 
                 # All indices processed for this file
                 # Move to next file - reset index position and processed indices
@@ -650,10 +628,11 @@ def main():
     except Exception as e:
         logger.error(f"Fatal error in main process: {e}", exc_info=True)
     finally:
+        # Close all database connections
+        await close_all_connections()
         logger.info(f"Process completed. Total domain files processed: {count if 'count' in locals() else 0}")
         
-        
-def resume_from_crash():
+async def resume_from_crash():
     """Function to resume processing after a crash"""
     logger.info("Attempting to resume from previous crash...")
     
@@ -666,12 +645,12 @@ def resume_from_crash():
     logger.info(f"Found previous state. Last processed domain file: {state.get('last_domain_file')} (file index: {state.get('last_processed_file_idx')}, index position: {state.get('last_processed_index_position')})")
     
     # Re-run the main process
-    main()
+    await main()
     return True
 
 if __name__ == "__main__":
     # Check for resume argument
     if len(sys.argv) > 1 and sys.argv[1] == '--resume':
-        resume_from_crash()
+        asyncio.run(resume_from_crash())
     else:
-        main()
+        asyncio.run(main())
