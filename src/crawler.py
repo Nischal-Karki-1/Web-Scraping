@@ -396,12 +396,19 @@ def save_domain_file(file_path, data_to_save, filename):
                 pass
         return False
     
+<<<<<<< HEAD
 def update_domain_file_with_new_index_data(conn, domain_file_data, new_index_data):
+=======
+def update_domain_file_with_new_index_data(domain_file_data, new_index_data):
+>>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
     """
     Update domain file data with new index data using stack approach (LIFO)
     
     Args: 
+<<<<<<< HEAD
         conn: Database connection object
+=======
+>>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
         domain_file_data: Existing domain file data dictionary
         new_index_data: New index entry with structure {"index": "name", "url_paths": [...]}
     
@@ -421,6 +428,7 @@ def update_domain_file_with_new_index_data(conn, domain_file_data, new_index_dat
     total_lines_added = len(url_paths)
     
     if index_name and index_name not in existing_indices:
+<<<<<<< HEAD
         # Get domain from domain_file_data
         domain = domain_file_data.get('domain', '')
         
@@ -445,6 +453,12 @@ def update_domain_file_with_new_index_data(conn, domain_file_data, new_index_dat
         domain_file_data['URL_paths'].insert(0, new_index_data)
         logger.info(f"Added index to top of stack: {index_name} with {len(url_paths)} URLs")
         
+=======
+        # Add new entry to the TOP of the list (stack behavior - LIFO)
+        domain_file_data['URL_paths'].insert(0, new_index_data)
+        logger.info(f"Added index to top of stack: {index_name} with {len(url_paths)} URLs")
+        
+>>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
         # Update total_lines
         current_total = domain_file_data.get('total_lines', 0)
         domain_file_data['total_lines'] = current_total + total_lines_added
