@@ -26,8 +26,9 @@ from urllib3.exceptions import (
     NewConnectionError
 )
 from socket import error as SocketError
-
-# Set up logging
+import psycopg
+from database import get_connection, return_connection, close_all_connections
+from urllib.parse import urlparse, urljoin
 import logging
 
 # Define the path to your log file on your local machine
@@ -78,10 +79,100 @@ STATE_FILE = 'crawler_state.json'
 TEMP_STATE_FILE = 'temp_crawler_state.json'  # For atomic state updates
 
 # Constants for retry settings
-MAX_RETRIES = 8
+MAX_RETRIES = 12
 INITIAL_BACKOFF = 2
-MAX_BACKOFF = 240  # 4 minutes max backoff
-SESSION_RESET_THRESHOLD = 3  # Reset session after this many failed requests
+MAX_BACKOFF = 300  
+SESSION_RESET_THRESHOLD = 4 
+
+import logging
+from urllib.parse import urlparse, urljoin
+
+def filter_url_path_before_storing_into_database(domain, url_paths):
+    filtered_url_paths = []
+
+    if not url_paths:
+        logging.info('No URLs found')
+        return []
+
+    if not domain.startswith('http'):
+        domain = f'https://{domain}'
+
+    for url in url_paths:
+        try:
+            if not url.startswith('http'):
+                url = urljoin(domain, url)
+
+            # Discard unnecessary patterns in URL
+            if any(discard_pattern in url for discard_pattern in ["english.", "en.", "robots.txt", "robot.txt"]):
+                continue
+
+            url_path = urlparse(url).netloc
+            domain_path = urlparse(domain).netloc
+
+            # Discard if domain doesn't match
+            if url_path.replace('www.', '') != domain_path.replace('www.', ''):
+                continue
+
+            filtered_url_paths.append(url)
+
+        except Exception as e:
+            logging.info(f'Error filtering the URL: {e}')
+
+    return filtered_url_paths
+
+
+
+
+def insert_into_url_registry_table(conn, domain_name, timestamp, index, url_paths):
+    """
+    Batch insert with detailed feedback about insertions vs conflicts
+    """
+    if not url_paths:
+        logger.info("No URLs to insert")
+        return {"inserted": 0, "duplicates": 0, "total": 0}
+    
+    data_to_insert = [
+        (domain_name, timestamp, index, url_path, 'pending') 
+        for url_path in url_paths
+    ]
+    
+    with conn.transaction():
+        with conn.cursor() as cur:
+            
+            cur.executemany(
+                """
+                INSERT INTO url_registry (domain, accessTimestamp, index, urlPath, status)
+                VALUES (%s, %s, %s, %s, %s)
+                ON CONFLICT (urlPath) DO UPDATE SET
+                    domain = EXCLUDED.domain  -- This ensures rowcount is accurate
+                WHERE url_registry.urlPath IS NULL;  -- This condition will never be true for existing rows
+                """,
+                data_to_insert
+            )
+            
+            # Now get accurate counts
+            rows_affected = cur.rowcount
+            
+            # Count actual new insertions vs updates (conflicts)
+            cur.execute(
+                """
+                SELECT COUNT(*) FROM url_registry 
+                WHERE urlPath = ANY(%s) AND domain = %s AND index = %s
+                """,
+                (url_paths, domain_name, index)
+            )
+            total_existing = cur.fetchone()[0]
+            
+            inserted = rows_affected
+            duplicates = len(url_paths) - inserted
+            
+            logger.info(f"Batch insert results: {inserted} new URLs inserted, {duplicates} duplicates skipped, {len(url_paths)} total processed for domain {domain_name}")
+            
+            return {
+                "inserted": inserted,
+                "duplicates": duplicates, 
+                "total": len(url_paths)
+            }
 
 def get_next_agent():
     """Rotate through user agents to avoid being blocked"""
@@ -305,11 +396,19 @@ def save_domain_file(file_path, data_to_save, filename):
                 pass
         return False
     
+<<<<<<< HEAD
+def update_domain_file_with_new_index_data(conn, domain_file_data, new_index_data):
+=======
 def update_domain_file_with_new_index_data(domain_file_data, new_index_data):
+>>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
     """
     Update domain file data with new index data using stack approach (LIFO)
     
     Args: 
+<<<<<<< HEAD
+        conn: Database connection object
+=======
+>>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
         domain_file_data: Existing domain file data dictionary
         new_index_data: New index entry with structure {"index": "name", "url_paths": [...]}
     
@@ -329,10 +428,37 @@ def update_domain_file_with_new_index_data(domain_file_data, new_index_data):
     total_lines_added = len(url_paths)
     
     if index_name and index_name not in existing_indices:
+<<<<<<< HEAD
+        # Get domain from domain_file_data
+        domain = domain_file_data.get('domain', '')
+        
+        # Call filtered_url function
+        filtered_url_paths = filter_url_path_before_storing_into_database(domain, url_paths)
+
+        if filtered_url_paths:
+            # Insert into database - now passing the list correctly
+            try:
+                insert_into_url_registry_table(  # Using batch version for better performance
+                    conn, 
+                    domain_name=domain,
+                    timestamp=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 
+                    index=index_name, 
+                    url_paths=filtered_url_paths  # This is now correctly a list
+                )
+            except Exception as e:
+                logger.error(f"Failed to insert URLs into database: {e}")
+             
+
         # Add new entry to the TOP of the list (stack behavior - LIFO)
         domain_file_data['URL_paths'].insert(0, new_index_data)
         logger.info(f"Added index to top of stack: {index_name} with {len(url_paths)} URLs")
         
+=======
+        # Add new entry to the TOP of the list (stack behavior - LIFO)
+        domain_file_data['URL_paths'].insert(0, new_index_data)
+        logger.info(f"Added index to top of stack: {index_name} with {len(url_paths)} URLs")
+        
+>>>>>>> ea4c50242ab3342c0f4ed60e5e6f438f7fc8d38c
         # Update total_lines
         current_total = domain_file_data.get('total_lines', 0)
         domain_file_data['total_lines'] = current_total + total_lines_added
