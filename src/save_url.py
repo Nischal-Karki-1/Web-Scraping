@@ -9,14 +9,33 @@ from urllib.parse import urlparse
 from pathlib import Path
 from database import get_connection, return_connection, close_all_connections
 
+
+
+
 # Configure logging
 logging.basicConfig(
-    filename='database.log',
+    filename='dadef insert_into_url_registry_table(conn, ):
+
+    do_insert_into_url_registry_table_block = f"""
+            DO $$
+            BEGIN
+                INSERT INTO url_registry (domain, accessTimestamp, index, urlPath, status)
+                VALUES (%s, %s, %s, %s, 'pending')
+                ON CONFLICT (urlPath) DO NOTHING;
+            END
+            $$;
+    """
+
+    with psycopg.connect(conn_info) as conn:
+        with conn.cursor() as cur:
+            cur.execute(do_insert_into_url_registry_table_block, (domain_from_url, timestamp, index_value, url_path))
+tabase.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+
 
 async def load_json_file(file_path):
     """Load and parse a JSON file."""

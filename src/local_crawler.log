@@ -1,787 +1,120 @@
-2025-04-20 12:40:44,664 - INFO - Logging system initialized successfully
-2025-04-20 12:40:44,668 - INFO - No previous state found, starting fresh
-2025-04-20 12:40:44,668 - INFO - Starting to process 26 domains from index 0
-2025-04-20 12:40:44,669 - INFO - Processing 1/26: annapurnapost.com
-2025-04-20 12:40:44,669 - INFO - Waiting 23.60s before processing: CC-MAIN-2025-13
-2025-04-20 12:41:08,272 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:41:08,273 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 12:41:09,690 - INFO - Waiting 21.24s before processing: CC-MAIN-2025-08
-2025-04-20 12:41:30,928 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:41:30,930 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:41:41,211 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.annapurnapost.com%2F%2A&output=json. Retry 1/8 in 1.87s
-2025-04-20 12:41:43,082 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:41:53,920 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.annapurnapost.com%2F%2A&output=json. Retry 2/8 in 5.20s
-2025-04-20 12:41:59,122 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:42:01,093 - INFO - Waiting 20.55s before processing: CC-MAIN-2025-05
-2025-04-20 12:42:21,646 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:42:21,647 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:42:25,582 - INFO - Waiting 28.98s before processing: CC-MAIN-2024-51
-2025-04-20 12:42:54,563 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:42:54,565 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:43:00,362 - INFO - Waiting 29.81s before processing: CC-MAIN-2024-46
-2025-04-20 12:43:30,174 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:43:30,176 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:43:31,653 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.annapurnapost.com%2F%2A&output=json. Retry 1/8 in 1.76s
-2025-04-20 12:43:33,415 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:43:36,196 - INFO - Waiting 22.86s before processing: CC-MAIN-2024-42
-2025-04-20 12:43:59,055 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:43:59,057 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:44:02,596 - INFO - Waiting 29.37s before processing: CC-MAIN-2024-38
-2025-04-20 12:44:31,966 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:44:31,969 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:44:35,005 - INFO - Waiting 25.61s before processing: CC-MAIN-2024-33
-2025-04-20 12:45:00,614 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:45:00,617 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 12:45:07,225 - INFO - Waiting 22.36s before processing: CC-MAIN-2024-30
-2025-04-20 12:45:29,581 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:45:29,583 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:45:31,285 - INFO - Waiting 23.78s before processing: CC-MAIN-2024-26
-2025-04-20 12:45:55,063 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:45:55,066 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:45:56,473 - INFO - Waiting 27.95s before processing: CC-MAIN-2024-22
-2025-04-20 12:46:24,422 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:46:24,424 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:46:26,525 - INFO - Waiting 24.61s before processing: CC-MAIN-2024-18
-2025-04-20 12:46:51,137 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:46:51,139 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:46:52,632 - INFO - Waiting 23.90s before processing: CC-MAIN-2024-10
-2025-04-20 12:47:16,534 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:47:16,536 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:47:18,089 - INFO - Waiting 28.39s before processing: CC-MAIN-2023-50
-2025-04-20 12:47:46,481 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:47:46,483 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:47:48,576 - INFO - Waiting 24.21s before processing: CC-MAIN-2023-40
-2025-04-20 12:48:12,789 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.annapurnapost.com%2F%2A&output=json
-2025-04-20 12:48:12,792 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:48:23,089 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.annapurnapost.com%2F%2A&output=json. Retry 1/8 in 2.96s
-2025-04-20 12:48:26,049 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:48:30,948 - INFO - Saved 1 records to all_domain_records.json
-2025-04-20 12:48:30,949 - INFO - Saved state at index 0, domain: annapurnapost.com
-2025-04-20 12:48:30,950 - INFO - Successfully processed domain: annapurnapost.com - Found 57205 URLs from 68331 response lines
-2025-04-20 12:48:30,950 - INFO - Waiting 56.00 seconds before next domain...
-2025-04-20 12:49:26,949 - INFO - Processing 2/26: nagariknews.nagariknetwork.com
-2025-04-20 12:49:26,951 - INFO - Waiting 22.40s before processing: CC-MAIN-2025-13
-2025-04-20 12:49:49,349 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:49:49,351 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:49:59,217 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json. Retry 1/8 in 2.38s
-2025-04-20 12:50:01,601 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 12:50:03,401 - INFO - Waiting 27.61s before processing: CC-MAIN-2025-08
-2025-04-20 12:50:31,010 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:50:31,012 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:50:33,125 - INFO - Waiting 26.24s before processing: CC-MAIN-2025-05
-2025-04-20 12:50:59,371 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:50:59,373 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:51:09,025 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json. Retry 1/8 in 1.14s
-2025-04-20 12:51:10,164 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:51:17,266 - INFO - Waiting 28.91s before processing: CC-MAIN-2024-51
-2025-04-20 12:51:46,175 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:51:46,177 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:51:47,083 - INFO - Waiting 28.98s before processing: CC-MAIN-2024-46
-2025-04-20 12:52:16,060 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:52:16,061 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:52:19,096 - INFO - Waiting 24.33s before processing: CC-MAIN-2024-42
-2025-04-20 12:52:43,423 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:52:43,425 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:52:45,749 - INFO - Waiting 29.19s before processing: CC-MAIN-2024-38
-2025-04-20 12:53:14,937 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:53:14,940 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:53:20,051 - INFO - Waiting 29.15s before processing: CC-MAIN-2024-33
-2025-04-20 12:53:49,197 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:53:49,199 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:53:52,705 - INFO - Waiting 20.40s before processing: CC-MAIN-2024-30
-2025-04-20 12:54:13,110 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:54:13,111 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:54:16,230 - INFO - Waiting 24.05s before processing: CC-MAIN-2024-26
-2025-04-20 12:54:40,276 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:54:40,279 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 12:54:41,150 - INFO - Waiting 23.15s before processing: CC-MAIN-2024-22
-2025-04-20 12:55:04,298 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:55:04,298 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:55:08,919 - INFO - Waiting 20.24s before processing: CC-MAIN-2024-18
-2025-04-20 12:55:29,158 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:55:29,159 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:55:34,498 - INFO - Waiting 20.74s before processing: CC-MAIN-2024-10
-2025-04-20 12:55:55,236 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:55:55,238 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:55:59,290 - INFO - Waiting 27.00s before processing: CC-MAIN-2023-50
-2025-04-20 12:56:26,288 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:56:26,291 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:56:28,138 - INFO - Waiting 25.99s before processing: CC-MAIN-2023-40
-2025-04-20 12:56:54,128 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.nagariknews.nagariknetwork.com%2F%2A&output=json
-2025-04-20 12:56:54,129 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:57:00,144 - INFO - Saved 2 records to all_domain_records.json
-2025-04-20 12:57:00,149 - INFO - Saved state at index 1, domain: nagariknews.nagariknetwork.com
-2025-04-20 12:57:00,149 - INFO - Successfully processed domain: nagariknews.nagariknetwork.com - Found 34841 URLs from 35935 response lines
-2025-04-20 12:57:00,150 - INFO - Waiting 58.85 seconds before next domain...
-2025-04-20 12:57:59,000 - INFO - Processing 3/26: nayapatrikadaily.com
-2025-04-20 12:57:59,002 - INFO - Waiting 20.69s before processing: CC-MAIN-2025-13
-2025-04-20 12:58:19,688 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 12:58:19,689 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 12:58:22,163 - INFO - Waiting 21.03s before processing: CC-MAIN-2025-08
-2025-04-20 12:58:43,193 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 12:58:43,193 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 12:58:47,361 - INFO - Waiting 26.62s before processing: CC-MAIN-2025-05
-2025-04-20 12:59:13,981 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 12:59:13,984 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 12:59:18,820 - INFO - Waiting 21.61s before processing: CC-MAIN-2024-51
-2025-04-20 12:59:40,434 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 12:59:40,436 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 12:59:43,524 - INFO - Waiting 25.39s before processing: CC-MAIN-2024-46
-2025-04-20 13:00:08,915 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:00:08,917 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:00:10,767 - INFO - Waiting 21.03s before processing: CC-MAIN-2024-42
-2025-04-20 13:00:31,802 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:00:31,804 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:00:35,207 - INFO - Waiting 29.97s before processing: CC-MAIN-2024-38
-2025-04-20 13:01:05,178 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:01:05,180 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:01:06,515 - INFO - Waiting 29.97s before processing: CC-MAIN-2024-33
-2025-04-20 13:01:36,487 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:01:36,490 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:01:37,646 - INFO - Waiting 22.10s before processing: CC-MAIN-2024-30
-2025-04-20 13:01:59,748 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:01:59,749 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:02:02,783 - INFO - Waiting 23.97s before processing: CC-MAIN-2024-26
-2025-04-20 13:02:26,751 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:02:26,754 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:02:31,570 - INFO - Waiting 26.88s before processing: CC-MAIN-2024-22
-2025-04-20 13:02:58,455 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:02:58,456 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:03:01,639 - INFO - Waiting 28.51s before processing: CC-MAIN-2024-18
-2025-04-20 13:03:30,145 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:03:30,147 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:03:34,047 - INFO - Waiting 25.40s before processing: CC-MAIN-2024-10
-2025-04-20 13:03:59,447 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:03:59,449 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:04:01,724 - INFO - Waiting 29.49s before processing: CC-MAIN-2023-50
-2025-04-20 13:04:31,211 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:04:31,212 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:04:33,644 - INFO - Waiting 22.44s before processing: CC-MAIN-2023-40
-2025-04-20 13:04:56,080 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.nayapatrikadaily.com%2F%2A&output=json
-2025-04-20 13:04:56,083 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:04:58,493 - INFO - Saved 3 records to all_domain_records.json
-2025-04-20 13:04:58,494 - INFO - Saved state at index 2, domain: nayapatrikadaily.com
-2025-04-20 13:04:58,495 - INFO - Successfully processed domain: nayapatrikadaily.com - Found 42081 URLs from 42639 response lines
-2025-04-20 13:04:58,495 - INFO - Waiting 57.12 seconds before next domain...
-2025-04-20 13:05:55,613 - INFO - Processing 4/26: karobardaily.com
-2025-04-20 13:05:55,614 - INFO - Waiting 23.88s before processing: CC-MAIN-2025-13
-2025-04-20 13:06:19,491 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:06:19,493 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:06:22,733 - INFO - Waiting 29.94s before processing: CC-MAIN-2025-08
-2025-04-20 13:06:52,675 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:06:52,677 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:06:54,209 - INFO - Waiting 20.37s before processing: CC-MAIN-2025-05
-2025-04-20 13:07:14,578 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:07:14,580 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:07:20,055 - INFO - Waiting 29.63s before processing: CC-MAIN-2024-51
-2025-04-20 13:07:49,683 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:07:49,685 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:07:52,834 - INFO - Waiting 23.76s before processing: CC-MAIN-2024-46
-2025-04-20 13:08:16,591 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:08:16,593 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:08:18,266 - INFO - Waiting 29.43s before processing: CC-MAIN-2024-42
-2025-04-20 13:08:47,699 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:08:47,700 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:08:53,967 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 1/8 in 2.34s
-2025-04-20 13:08:56,305 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:08:57,410 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 2/8 in 5.87s
-2025-04-20 13:09:03,286 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:09:09,534 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 3/8 in 6.15s
-2025-04-20 13:09:09,534 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 13:09:15,681 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:09:16,613 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 4/8 in 21.38s
-2025-04-20 13:09:37,996 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:09:42,888 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 5/8 in 45.72s
-2025-04-20 13:10:28,614 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:10:33,415 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 6/8 in 48.76s
-2025-04-20 13:10:33,416 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 13:11:22,173 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:11:31,940 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 7/8 in 114.60s
-2025-04-20 13:13:26,537 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:13:29,231 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 8/8 in 128.81s
-2025-04-20 13:15:38,045 - ERROR - Failed after 8 retries for URL: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:15:38,049 - WARNING - Skipping index CC-MAIN-2024-42 due to failed requests
-2025-04-20 13:15:38,050 - INFO - Waiting 24.70s before processing: CC-MAIN-2024-38
-2025-04-20 13:16:02,756 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:16:02,757 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:16:04,397 - INFO - Waiting 25.58s before processing: CC-MAIN-2024-33
-2025-04-20 13:16:29,982 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:16:29,984 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:16:30,526 - INFO - Waiting 26.62s before processing: CC-MAIN-2024-30
-2025-04-20 13:16:57,149 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:16:57,150 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:16:57,650 - INFO - Waiting 24.75s before processing: CC-MAIN-2024-26
-2025-04-20 13:17:22,403 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:17:22,405 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:17:24,230 - INFO - Waiting 20.76s before processing: CC-MAIN-2024-22
-2025-04-20 13:17:44,986 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:17:44,987 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:17:50,696 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.karobardaily.com%2F%2A&output=json. Retry 1/8 in 1.45s
-2025-04-20 13:17:52,147 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:17:56,629 - INFO - Waiting 28.05s before processing: CC-MAIN-2024-18
-2025-04-20 13:18:24,675 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:18:24,677 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:18:28,061 - INFO - Waiting 28.23s before processing: CC-MAIN-2024-10
-2025-04-20 13:18:56,288 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:18:56,290 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:19:01,304 - INFO - Waiting 26.61s before processing: CC-MAIN-2023-50
-2025-04-20 13:19:27,918 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:19:27,919 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:19:39,503 - INFO - Waiting 24.23s before processing: CC-MAIN-2023-40
-2025-04-20 13:20:03,738 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.karobardaily.com%2F%2A&output=json
-2025-04-20 13:20:03,741 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:20:06,501 - INFO - Saved 4 records to all_domain_records.json
-2025-04-20 13:20:06,503 - INFO - Saved state at index 3, domain: karobardaily.com
-2025-04-20 13:20:06,504 - INFO - Successfully processed domain: karobardaily.com - Found 41970 URLs from 42303 response lines
-2025-04-20 13:20:06,504 - INFO - Waiting 56.85 seconds before next domain...
-2025-04-20 13:21:03,354 - INFO - Processing 5/26: gorkhapatraonline.com
-2025-04-20 13:21:03,356 - INFO - Waiting 27.30s before processing: CC-MAIN-2025-13
-2025-04-20 13:21:30,660 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:21:30,662 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:21:35,883 - INFO - Waiting 27.01s before processing: CC-MAIN-2025-08
-2025-04-20 13:22:02,896 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:22:02,898 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:22:12,696 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json. Retry 1/8 in 1.68s
-2025-04-20 13:22:14,375 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:22:16,825 - INFO - Waiting 27.26s before processing: CC-MAIN-2025-05
-2025-04-20 13:22:44,082 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:22:44,084 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:22:50,747 - INFO - Waiting 25.11s before processing: CC-MAIN-2024-51
-2025-04-20 13:23:15,855 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:23:15,857 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:23:22,173 - INFO - Waiting 26.58s before processing: CC-MAIN-2024-46
-2025-04-20 13:23:48,756 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:23:48,757 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:23:53,939 - INFO - Waiting 25.86s before processing: CC-MAIN-2024-42
-2025-04-20 13:24:19,798 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:24:19,801 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:24:25,954 - INFO - Waiting 28.24s before processing: CC-MAIN-2024-38
-2025-04-20 13:24:54,191 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:24:54,193 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:25:02,591 - INFO - Waiting 20.78s before processing: CC-MAIN-2024-33
-2025-04-20 13:25:23,377 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:25:23,379 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:25:33,666 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json. Retry 1/8 in 1.87s
-2025-04-20 13:25:35,542 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:25:37,770 - INFO - Waiting 25.22s before processing: CC-MAIN-2024-30
-2025-04-20 13:26:02,992 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:26:02,993 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:26:10,620 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json. Retry 1/8 in 1.46s
-2025-04-20 13:26:12,086 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:26:16,656 - INFO - Waiting 25.75s before processing: CC-MAIN-2024-26
-2025-04-20 13:26:42,407 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:26:42,409 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:26:52,701 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json. Retry 1/8 in 2.65s
-2025-04-20 13:26:55,354 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:27:02,234 - INFO - Waiting 21.46s before processing: CC-MAIN-2024-22
-2025-04-20 13:27:23,693 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:27:23,695 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:27:28,651 - INFO - Waiting 28.84s before processing: CC-MAIN-2024-18
-2025-04-20 13:27:57,497 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:27:57,500 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:28:07,787 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json. Retry 1/8 in 2.51s
-2025-04-20 13:28:10,302 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:28:13,491 - INFO - Waiting 25.76s before processing: CC-MAIN-2024-10
-2025-04-20 13:28:39,248 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:28:39,250 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:28:41,076 - INFO - Waiting 20.85s before processing: CC-MAIN-2023-50
-2025-04-20 13:29:01,930 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:29:01,931 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:29:05,071 - INFO - Waiting 20.89s before processing: CC-MAIN-2023-40
-2025-04-20 13:29:25,959 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json
-2025-04-20 13:29:25,961 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:29:36,256 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.gorkhapatraonline.com%2F%2A&output=json. Retry 1/8 in 2.36s
-2025-04-20 13:29:38,619 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:29:43,935 - INFO - Saved 5 records to all_domain_records.json
-2025-04-20 13:29:43,937 - INFO - Saved state at index 4, domain: gorkhapatraonline.com
-2025-04-20 13:29:43,937 - INFO - Successfully processed domain: gorkhapatraonline.com - Found 57042 URLs from 57585 response lines
-2025-04-20 13:29:43,937 - INFO - Waiting 57.31 seconds before next domain...
-2025-04-20 13:30:41,244 - INFO - Processing 6/26: abhiyandaily.com
-2025-04-20 13:30:41,246 - INFO - Waiting 23.45s before processing: CC-MAIN-2025-13
-2025-04-20 13:31:04,695 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:31:04,697 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:31:10,221 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.abhiyandaily.com%2F%2A&output=json. Retry 1/8 in 2.46s
-2025-04-20 13:31:12,685 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:31:14,752 - INFO - Waiting 24.60s before processing: CC-MAIN-2025-08
-2025-04-20 13:31:39,351 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:31:39,353 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:31:40,173 - INFO - Waiting 29.74s before processing: CC-MAIN-2025-05
-2025-04-20 13:32:09,912 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:32:09,914 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:32:12,637 - INFO - Waiting 22.17s before processing: CC-MAIN-2024-51
-2025-04-20 13:32:34,810 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:32:34,812 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:32:39,111 - INFO - Waiting 25.79s before processing: CC-MAIN-2024-46
-2025-04-20 13:33:04,901 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:33:04,901 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:33:12,305 - INFO - Waiting 25.98s before processing: CC-MAIN-2024-42
-2025-04-20 13:33:38,291 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:33:38,293 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:33:46,852 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.abhiyandaily.com%2F%2A&output=json. Retry 1/8 in 2.83s
-2025-04-20 13:33:49,682 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:34:00,659 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.abhiyandaily.com%2F%2A&output=json. Retry 2/8 in 2.46s
-2025-04-20 13:34:03,123 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:34:11,012 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.abhiyandaily.com%2F%2A&output=json. Retry 3/8 in 5.14s
-2025-04-20 13:34:11,014 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 13:34:16,151 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:34:22,437 - INFO - Waiting 23.96s before processing: CC-MAIN-2024-38
-2025-04-20 13:34:46,394 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:34:46,395 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:34:48,475 - INFO - Waiting 28.47s before processing: CC-MAIN-2024-33
-2025-04-20 13:35:16,943 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:35:16,944 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:35:20,867 - INFO - Waiting 22.93s before processing: CC-MAIN-2024-30
-2025-04-20 13:35:43,799 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:35:43,801 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:35:54,108 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.abhiyandaily.com%2F%2A&output=json. Retry 1/8 in 2.58s
-2025-04-20 13:35:56,693 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:35:59,249 - INFO - Waiting 29.55s before processing: CC-MAIN-2024-26
-2025-04-20 13:36:28,802 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:36:28,804 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:36:31,328 - INFO - Waiting 28.74s before processing: CC-MAIN-2024-22
-2025-04-20 13:37:00,073 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:37:00,074 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:37:03,680 - INFO - Waiting 26.65s before processing: CC-MAIN-2024-18
-2025-04-20 13:37:30,326 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:37:30,329 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:37:43,016 - INFO - Waiting 25.86s before processing: CC-MAIN-2024-10
-2025-04-20 13:38:08,873 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:38:08,876 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:38:10,201 - INFO - Waiting 27.53s before processing: CC-MAIN-2023-50
-2025-04-20 13:38:37,735 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:38:37,736 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:38:41,551 - INFO - Waiting 21.80s before processing: CC-MAIN-2023-40
-2025-04-20 13:39:03,348 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.abhiyandaily.com%2F%2A&output=json
-2025-04-20 13:39:03,350 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:39:09,556 - INFO - Saved 6 records to all_domain_records.json
-2025-04-20 13:39:09,558 - INFO - Saved state at index 5, domain: abhiyandaily.com
-2025-04-20 13:39:09,558 - INFO - Successfully processed domain: abhiyandaily.com - Found 18715 URLs from 22224 response lines
-2025-04-20 13:39:09,559 - INFO - Waiting 51.37 seconds before next domain...
-2025-04-20 13:40:00,928 - INFO - Processing 7/26: newsofnepal.com
-2025-04-20 13:40:00,929 - INFO - Waiting 28.57s before processing: CC-MAIN-2025-13
-2025-04-20 13:40:29,496 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:40:29,497 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:40:33,466 - INFO - Waiting 28.14s before processing: CC-MAIN-2025-08
-2025-04-20 13:41:01,605 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:41:01,607 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:41:08,699 - INFO - Waiting 26.90s before processing: CC-MAIN-2025-05
-2025-04-20 13:41:35,605 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:41:35,608 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:41:38,693 - INFO - Waiting 21.91s before processing: CC-MAIN-2024-51
-2025-04-20 13:42:00,607 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:42:00,608 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:42:04,879 - INFO - Waiting 20.30s before processing: CC-MAIN-2024-46
-2025-04-20 13:42:25,181 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:42:25,183 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:42:37,836 - INFO - Waiting 20.73s before processing: CC-MAIN-2024-42
-2025-04-20 13:42:58,564 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:42:58,566 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:43:05,745 - INFO - Waiting 26.29s before processing: CC-MAIN-2024-38
-2025-04-20 13:43:32,034 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:43:32,036 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:43:35,916 - INFO - Waiting 23.85s before processing: CC-MAIN-2024-33
-2025-04-20 13:43:59,765 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:43:59,766 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:44:55,061 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out.. Retry 1/8 in 2.60s
-2025-04-20 13:44:57,659 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:45:12,681 - WARNING - Request failed (ConnectTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-33-index?url=%2A.newsofnepal.com%2F%2A&output=json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000010E9A9F9E50>, 'Connection to index.commoncrawl.org timed out. (connect timeout=15)')). Retry 2/8 in 5.84s
-2025-04-20 13:45:18,525 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:47:31,660 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out.. Retry 3/8 in 5.73s
-2025-04-20 13:47:31,661 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 13:47:37,393 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:47:43,656 - INFO - Waiting 27.70s before processing: CC-MAIN-2024-30
-2025-04-20 13:48:11,357 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:48:11,358 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:48:15,876 - INFO - Waiting 22.00s before processing: CC-MAIN-2024-26
-2025-04-20 13:48:37,878 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:48:37,879 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:48:43,464 - INFO - Waiting 26.35s before processing: CC-MAIN-2024-22
-2025-04-20 13:49:09,819 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:49:09,821 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:49:17,835 - INFO - Waiting 28.27s before processing: CC-MAIN-2024-18
-2025-04-20 13:49:46,106 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:49:46,107 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:50:31,110 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=45). Retry 1/8 in 1.60s
-2025-04-20 13:50:32,708 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:50:44,025 - INFO - Waiting 23.70s before processing: CC-MAIN-2024-10
-2025-04-20 13:51:07,724 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:51:07,726 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:51:16,880 - INFO - Waiting 22.81s before processing: CC-MAIN-2023-50
-2025-04-20 13:51:39,691 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:51:39,693 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:51:42,967 - INFO - Waiting 21.23s before processing: CC-MAIN-2023-40
-2025-04-20 13:52:04,198 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.newsofnepal.com%2F%2A&output=json
-2025-04-20 13:52:04,200 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:52:33,297 - INFO - Saved 7 records to all_domain_records.json
-2025-04-20 13:52:33,299 - INFO - Saved state at index 6, domain: newsofnepal.com
-2025-04-20 13:52:33,299 - INFO - Successfully processed domain: newsofnepal.com - Found 26492 URLs from 30513 response lines
-2025-04-20 13:52:33,299 - INFO - Waiting 53.80 seconds before next domain...
-2025-04-20 13:53:27,098 - INFO - Processing 8/26: arghakhanchi.com
-2025-04-20 13:53:27,099 - INFO - Waiting 26.02s before processing: CC-MAIN-2025-13
-2025-04-20 13:53:53,124 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 13:53:53,126 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:54:14,980 - INFO - Waiting 23.00s before processing: CC-MAIN-2025-08
-2025-04-20 13:54:37,983 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 13:54:37,985 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:54:53,167 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 1.99s
-2025-04-20 13:54:55,156 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 13:55:23,705 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=15). Retry 2/8 in 2.05s
-2025-04-20 13:55:25,754 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 13:55:40,758 - WARNING - Request failed (ConnectTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000010E9A9FB9D0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=15)')). Retry 3/8 in 8.44s
-2025-04-20 13:55:40,759 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 13:55:49,200 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:55:58,517 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 4/8 in 19.08s
-2025-04-20 13:56:17,600 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:56:18,666 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 5/8 in 43.72s
-2025-04-20 13:57:02,392 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 13:57:10,000 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 6/8 in 50.73s
-2025-04-20 13:57:10,001 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 13:58:00,732 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 13:58:04,346 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 7/8 in 87.35s
-2025-04-20 13:59:31,695 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 13:59:37,165 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 8/8 in 258.76s
-2025-04-20 14:03:55,926 - ERROR - Failed after 8 retries for URL: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:03:55,927 - WARNING - Skipping index CC-MAIN-2025-08 due to failed requests
-2025-04-20 14:03:55,928 - INFO - Waiting 23.44s before processing: CC-MAIN-2025-05
-2025-04-20 14:04:19,365 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:04:19,367 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:04:21,358 - INFO - Waiting 23.21s before processing: CC-MAIN-2024-51
-2025-04-20 14:04:44,572 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:04:44,574 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:04:45,239 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 2.64s
-2025-04-20 14:04:47,883 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:04:57,927 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 2/8 in 4.58s
-2025-04-20 14:05:02,509 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:05:13,388 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 3/8 in 9.53s
-2025-04-20 14:05:13,389 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:05:22,920 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:05:32,485 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 4/8 in 14.41s
-2025-04-20 14:05:46,894 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:05:57,787 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 5/8 in 21.67s
-2025-04-20 14:06:19,455 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:07:05,038 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=45). Retry 6/8 in 63.52s
-2025-04-20 14:07:05,038 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:08:08,563 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 14:08:21,561 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 7/8 in 91.42s
-2025-04-20 14:09:52,981 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:10:06,606 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 8/8 in 157.28s
-2025-04-20 14:12:43,889 - ERROR - Failed after 8 retries for URL: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:12:43,891 - WARNING - Skipping index CC-MAIN-2024-51 due to failed requests
-2025-04-20 14:12:43,892 - INFO - Waiting 26.96s before processing: CC-MAIN-2024-46
-2025-04-20 14:13:10,849 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:13:10,851 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:13:16,316 - INFO - Waiting 23.60s before processing: CC-MAIN-2024-42
-2025-04-20 14:13:39,914 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:13:39,915 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:13:42,534 - INFO - Waiting 23.21s before processing: CC-MAIN-2024-38
-2025-04-20 14:14:05,745 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:14:05,746 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:14:16,555 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 1.45s
-2025-04-20 14:14:18,008 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:14:35,412 - WARNING - Request failed (ConnectionError): ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)). Retry 2/8 in 5.26s
-2025-04-20 14:14:40,672 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:15:02,637 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 3/8 in 8.45s
-2025-04-20 14:15:02,638 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:15:11,094 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:15:11,106 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9E810050>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 4/8 in 13.19s
-2025-04-20 14:15:24,299 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:15:48,577 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 5/8 in 39.22s
-2025-04-20 14:16:27,799 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:16:39,686 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 6/8 in 80.44s
-2025-04-20 14:16:39,687 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:18:00,125 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 14:18:15,552 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 7/8 in 78.67s
-2025-04-20 14:19:34,219 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:19:49,240 - WARNING - Request failed (ConnectTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000010E9E810410>, 'Connection to index.commoncrawl.org timed out. (connect timeout=15)')). Retry 8/8 in 280.59s
-2025-04-20 14:24:29,837 - ERROR - Failed after 8 retries for URL: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:24:29,837 - WARNING - Skipping index CC-MAIN-2024-38 due to failed requests
-2025-04-20 14:24:29,838 - INFO - Waiting 21.09s before processing: CC-MAIN-2024-33
-2025-04-20 14:24:50,933 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:24:50,935 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:24:53,998 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 1.10s
-2025-04-20 14:24:55,100 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:25:02,332 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 2/8 in 5.66s
-2025-04-20 14:25:07,992 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:25:08,959 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 3/8 in 8.17s
-2025-04-20 14:25:08,960 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:25:17,135 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:25:20,368 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 4/8 in 8.47s
-2025-04-20 14:25:28,839 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:25:43,084 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 5/8 in 32.57s
-2025-04-20 14:26:15,657 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:26:26,786 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 6/8 in 32.08s
-2025-04-20 14:26:26,787 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:26:58,866 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:27:09,836 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 7/8 in 134.72s
-2025-04-20 14:29:24,556 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:29:53,487 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 8/8 in 139.88s
-2025-04-20 14:32:13,370 - ERROR - Failed after 8 retries for URL: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:32:13,373 - WARNING - Skipping index CC-MAIN-2024-33 due to failed requests
-2025-04-20 14:32:13,374 - INFO - Waiting 26.23s before processing: CC-MAIN-2024-30
-2025-04-20 14:32:39,605 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:32:39,607 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 14:32:43,131 - INFO - Waiting 27.31s before processing: CC-MAIN-2024-26
-2025-04-20 14:33:10,442 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:33:10,444 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:33:18,001 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 2.93s
-2025-04-20 14:33:20,935 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:33:23,067 - INFO - Waiting 21.83s before processing: CC-MAIN-2024-22
-2025-04-20 14:33:44,903 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:33:44,905 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:33:47,991 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 1.15s
-2025-04-20 14:33:49,143 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:33:50,314 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 2/8 in 2.19s
-2025-04-20 14:33:52,505 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:34:03,331 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 3/8 in 5.16s
-2025-04-20 14:34:03,332 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:34:08,493 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:34:12,304 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 4/8 in 8.70s
-2025-04-20 14:34:21,005 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:34:24,531 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 5/8 in 32.89s
-2025-04-20 14:34:57,423 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:34:58,329 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 6/8 in 52.66s
-2025-04-20 14:34:58,330 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:35:50,989 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:35:52,365 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 7/8 in 98.27s
-2025-04-20 14:37:30,641 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 14:37:33,192 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 8/8 in 206.96s
-2025-04-20 14:41:00,152 - ERROR - Failed after 8 retries for URL: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:41:00,155 - WARNING - Skipping index CC-MAIN-2024-22 due to failed requests
-2025-04-20 14:41:00,156 - INFO - Waiting 29.17s before processing: CC-MAIN-2024-18
-2025-04-20 14:41:29,330 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:41:29,332 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:41:31,174 - INFO - Waiting 23.75s before processing: CC-MAIN-2024-10
-2025-04-20 14:41:54,922 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:41:54,924 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:42:02,571 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 2.33s
-2025-04-20 14:42:04,901 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:42:05,953 - INFO - Waiting 22.10s before processing: CC-MAIN-2023-50
-2025-04-20 14:42:28,054 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:42:28,056 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:42:32,946 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 1/8 in 2.16s
-2025-04-20 14:42:35,110 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:42:44,930 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 2/8 in 5.52s
-2025-04-20 14:42:50,454 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:42:54,241 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 3/8 in 5.44s
-2025-04-20 14:42:54,242 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:42:59,684 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:43:00,550 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 4/8 in 16.59s
-2025-04-20 14:43:17,145 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:43:20,566 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 5/8 in 43.71s
-2025-04-20 14:44:04,274 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:44:08,671 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 6/8 in 66.16s
-2025-04-20 14:44:08,673 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 14:45:14,838 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 14:45:35,513 - WARNING - Request failed (HTTPError): 404 Client Error: Not Found for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 7/8 in 101.68s
-2025-04-20 14:47:17,198 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:47:25,252 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json. Retry 8/8 in 221.40s
-2025-04-20 14:51:06,650 - ERROR - Failed after 8 retries for URL: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:51:06,653 - WARNING - Skipping index CC-MAIN-2023-50 due to failed requests
-2025-04-20 14:51:06,653 - INFO - Waiting 29.41s before processing: CC-MAIN-2023-40
-2025-04-20 14:51:36,063 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.arghakhanchi.com%2F%2A&output=json
-2025-04-20 14:51:36,065 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:51:42,616 - INFO - Saved 8 records to all_domain_records.json
-2025-04-20 14:51:42,618 - INFO - Saved state at index 7, domain: arghakhanchi.com
-2025-04-20 14:51:42,618 - INFO - Successfully processed domain: arghakhanchi.com - Found 0 URLs from 67 response lines
-2025-04-20 14:51:42,619 - INFO - Waiting 55.62 seconds before next domain...
-2025-04-20 14:52:38,242 - INFO - Processing 9/26: souryaonline.com
-2025-04-20 14:52:38,244 - INFO - Waiting 20.25s before processing: CC-MAIN-2025-13
-2025-04-20 14:52:58,501 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:52:58,502 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:53:16,310 - INFO - Waiting 28.34s before processing: CC-MAIN-2025-08
-2025-04-20 14:53:44,652 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:53:44,655 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:54:20,419 - INFO - Waiting 28.77s before processing: CC-MAIN-2025-05
-2025-04-20 14:54:49,186 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:54:49,187 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:54:56,351 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 1/8 in 1.25s
-2025-04-20 14:54:57,607 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:55:09,076 - INFO - Waiting 25.27s before processing: CC-MAIN-2024-51
-2025-04-20 14:55:34,345 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:55:34,347 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:56:30,666 - INFO - Waiting 22.40s before processing: CC-MAIN-2024-46
-2025-04-20 14:56:53,066 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:56:53,069 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:56:58,652 - INFO - Waiting 20.07s before processing: CC-MAIN-2024-42
-2025-04-20 14:57:18,721 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:57:18,724 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:57:26,946 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 1/8 in 2.31s
-2025-04-20 14:57:29,261 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 14:57:35,383 - INFO - Waiting 26.26s before processing: CC-MAIN-2024-38
-2025-04-20 14:58:01,641 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:58:01,644 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 14:58:02,431 - INFO - Waiting 22.54s before processing: CC-MAIN-2024-33
-2025-04-20 14:58:24,973 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:58:24,973 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 14:58:27,229 - INFO - Waiting 22.41s before processing: CC-MAIN-2024-30
-2025-04-20 14:58:49,637 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 14:58:49,638 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:59:34,643 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=45). Retry 1/8 in 1.49s
-2025-04-20 14:59:36,132 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 14:59:43,122 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 2/8 in 4.02s
-2025-04-20 14:59:47,142 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 14:59:57,279 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 3/8 in 11.58s
-2025-04-20 14:59:57,280 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 15:00:08,863 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:00:10,829 - INFO - Waiting 28.38s before processing: CC-MAIN-2024-26
-2025-04-20 15:00:39,207 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 15:00:39,210 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:00:50,086 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 1/8 in 1.60s
-2025-04-20 15:00:51,690 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:00:55,304 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 2/8 in 3.60s
-2025-04-20 15:00:58,906 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:01:09,757 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 3/8 in 11.60s
-2025-04-20 15:01:09,758 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 15:01:21,355 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 15:01:29,285 - INFO - Waiting 21.56s before processing: CC-MAIN-2024-22
-2025-04-20 15:01:50,846 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 15:01:50,849 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:01:55,548 - INFO - Waiting 20.72s before processing: CC-MAIN-2024-18
-2025-04-20 15:02:16,272 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 15:02:16,274 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:02:23,277 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 1/8 in 2.00s
-2025-04-20 15:02:25,281 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:02:27,365 - INFO - Waiting 23.69s before processing: CC-MAIN-2024-10
-2025-04-20 15:02:51,057 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 15:02:51,060 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:02:54,339 - INFO - Waiting 27.73s before processing: CC-MAIN-2023-50
-2025-04-20 15:03:22,071 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 15:03:22,073 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:03:31,350 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 1/8 in 2.95s
-2025-04-20 15:03:34,300 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:03:43,838 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.souryaonline.com%2F%2A&output=json. Retry 2/8 in 2.11s
-2025-04-20 15:03:45,955 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:03:49,051 - INFO - Waiting 28.00s before processing: CC-MAIN-2023-40
-2025-04-20 15:04:17,052 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.souryaonline.com%2F%2A&output=json
-2025-04-20 15:04:17,053 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:04:24,428 - INFO - Saved 9 records to all_domain_records.json
-2025-04-20 15:04:24,430 - INFO - Saved state at index 8, domain: souryaonline.com
-2025-04-20 15:04:24,430 - INFO - Successfully processed domain: souryaonline.com - Found 21411 URLs from 21491 response lines
-2025-04-20 15:04:24,431 - INFO - Waiting 52.74 seconds before next domain...
-2025-04-20 15:05:17,172 - INFO - Processing 10/26: rajdhanidaily.com
-2025-04-20 15:05:17,174 - INFO - Waiting 25.36s before processing: CC-MAIN-2025-13
-2025-04-20 15:05:42,535 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:05:42,537 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:05:44,813 - INFO - Waiting 21.61s before processing: CC-MAIN-2025-08
-2025-04-20 15:06:06,425 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:06:06,428 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 15:06:21,857 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.rajdhanidaily.com%2F%2A&output=json. Retry 1/8 in 1.58s
-2025-04-20 15:06:23,441 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:07:10,474 - INFO - Waiting 22.57s before processing: CC-MAIN-2025-05
-2025-04-20 15:07:33,040 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:07:33,044 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:08:18,054 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=45). Retry 1/8 in 2.40s
-2025-04-20 15:08:20,456 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:08:38,930 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=15). Retry 2/8 in 2.44s
-2025-04-20 15:08:41,375 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:09:10,661 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.rajdhanidaily.com%2F%2A&output=json. Retry 3/8 in 10.43s
-2025-04-20 15:09:10,662 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 15:09:21,090 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:10:34,293 - INFO - Waiting 22.12s before processing: CC-MAIN-2024-51
-2025-04-20 15:10:56,412 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:10:56,414 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:11:07,635 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=%2A.rajdhanidaily.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9A9F9BD0>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 1/8 in 2.74s
-2025-04-20 15:11:10,378 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:11:10,383 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=%2A.rajdhanidaily.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9A9F9E50>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 2/8 in 3.43s
-2025-04-20 15:11:13,814 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:11:13,819 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=%2A.rajdhanidaily.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9EB0C050>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 3/8 in 8.48s
-2025-04-20 15:11:13,820 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 15:11:22,301 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:11:22,306 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=%2A.rajdhanidaily.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9EB0C410>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 4/8 in 15.06s
-2025-04-20 15:11:37,366 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 15:11:48,604 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=%2A.rajdhanidaily.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9EB0C7D0>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 5/8 in 35.41s
-2025-04-20 15:12:24,015 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:12:56,490 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=15). Retry 6/8 in 76.33s
-2025-04-20 15:12:56,491 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 15:14:12,819 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:15:26,698 - INFO - Waiting 20.85s before processing: CC-MAIN-2024-46
-2025-04-20 15:15:47,545 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:15:47,547 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:15:57,302 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.rajdhanidaily.com%2F%2A&output=json. Retry 1/8 in 2.49s
-2025-04-20 15:15:59,797 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:16:08,709 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.rajdhanidaily.com%2F%2A&output=json. Retry 2/8 in 3.71s
-2025-04-20 15:16:12,417 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:16:14,391 - INFO - Waiting 26.62s before processing: CC-MAIN-2024-42
-2025-04-20 15:16:41,016 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:16:41,019 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:16:47,256 - INFO - Waiting 26.42s before processing: CC-MAIN-2024-38
-2025-04-20 15:17:13,680 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:17:13,684 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:17:14,831 - INFO - Waiting 22.68s before processing: CC-MAIN-2024-33
-2025-04-20 15:17:37,510 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:17:37,514 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:17:46,904 - INFO - Waiting 20.65s before processing: CC-MAIN-2024-30
-2025-04-20 15:18:07,556 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-30-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:18:07,557 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:18:52,567 - WARNING - Request failed (ReadTimeout): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Read timed out. (read timeout=45). Retry 1/8 in 2.36s
-2025-04-20 15:18:54,932 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 15:18:59,659 - INFO - Waiting 21.49s before processing: CC-MAIN-2024-26
-2025-04-20 15:19:21,150 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:19:21,152 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:19:27,160 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=%2A.rajdhanidaily.com%2F%2A&output=json. Retry 1/8 in 1.17s
-2025-04-20 15:19:28,327 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:19:42,053 - INFO - Waiting 27.80s before processing: CC-MAIN-2024-22
-2025-04-20 15:20:09,853 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-22-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:20:09,856 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:20:12,937 - INFO - Waiting 21.14s before processing: CC-MAIN-2024-18
-2025-04-20 15:20:34,079 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:20:34,081 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:20:39,711 - INFO - Waiting 29.28s before processing: CC-MAIN-2024-10
-2025-04-20 15:21:08,994 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:21:08,997 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:21:19,276 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.rajdhanidaily.com%2F%2A&output=json. Retry 1/8 in 1.84s
-2025-04-20 15:21:21,115 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:21:32,069 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=%2A.rajdhanidaily.com%2F%2A&output=json. Retry 2/8 in 2.73s
-2025-04-20 15:21:34,798 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:21:42,683 - INFO - Waiting 23.65s before processing: CC-MAIN-2023-50
-2025-04-20 15:22:06,337 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:22:06,341 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:22:07,749 - INFO - Waiting 25.97s before processing: CC-MAIN-2023-40
-2025-04-20 15:22:33,718 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2023-40-index?url=%2A.rajdhanidaily.com%2F%2A&output=json
-2025-04-20 15:22:33,720 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:23:06,128 - INFO - Saved 10 records to all_domain_records.json
-2025-04-20 15:23:06,130 - INFO - Saved state at index 9, domain: rajdhanidaily.com
-2025-04-20 15:23:06,130 - INFO - Successfully processed domain: rajdhanidaily.com - Found 23970 URLs from 24501 response lines
-2025-04-20 15:23:06,131 - INFO - Waiting 54.01 seconds before next domain...
-2025-04-20 15:24:00,145 - INFO - Processing 11/26: osnepal.com
-2025-04-20 15:24:00,146 - INFO - Waiting 29.63s before processing: CC-MAIN-2025-13
-2025-04-20 15:24:29,777 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-13-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:24:29,780 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 15:24:41,057 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2025-13-index?url=%2A.osnepal.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9EB0D310>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 1/8 in 1.86s
-2025-04-20 15:24:42,916 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:24:42,920 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2025-13-index?url=%2A.osnepal.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9EB0D6D0>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 2/8 in 5.92s
-2025-04-20 15:24:48,840 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:24:48,845 - WARNING - Request failed (ConnectionError): HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2025-13-index?url=%2A.osnepal.com%2F%2A&output=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000010E9EB0DA90>: Failed to resolve 'index.commoncrawl.org' ([Errno 11001] getaddrinfo failed)")). Retry 3/8 in 8.32s
-2025-04-20 15:24:48,845 - INFO - Multiple consecutive failures. Creating new session.
-2025-04-20 15:24:57,167 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:25:10,213 - INFO - Waiting 29.18s before processing: CC-MAIN-2025-08
-2025-04-20 15:25:39,392 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-08-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:25:39,393 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:25:55,519 - INFO - Waiting 24.58s before processing: CC-MAIN-2025-05
-2025-04-20 15:26:20,102 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:26:20,104 - INFO - Using agent: Mozilla/5.0 (compatible; claude-web/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:26:30,436 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.osnepal.com%2F%2A&output=json. Retry 1/8 in 2.73s
-2025-04-20 15:26:33,170 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
-2025-04-20 15:26:43,922 - WARNING - Request failed (HTTPError): 500 Server Error: Internal Error: An error occurred (SlowDown) when calling the GetObject operation (reached max retries: 4): Please reduce your request rate. for url: https://index.commoncrawl.org/CC-MAIN-2025-05-index?url=%2A.osnepal.com%2F%2A&output=json. Retry 2/8 in 3.83s
-2025-04-20 15:26:47,756 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:26:50,148 - INFO - Waiting 21.16s before processing: CC-MAIN-2024-51
-2025-04-20 15:27:11,304 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:27:11,307 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:27:17,349 - INFO - Waiting 20.26s before processing: CC-MAIN-2024-46
-2025-04-20 15:27:37,606 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-46-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:27:37,609 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:27:47,470 - INFO - Waiting 27.98s before processing: CC-MAIN-2024-42
-2025-04-20 15:28:15,450 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-42-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:28:15,453 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot)
-2025-04-20 15:28:18,354 - INFO - Waiting 20.17s before processing: CC-MAIN-2024-38
-2025-04-20 15:28:38,527 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:28:38,530 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)
-2025-04-20 15:28:48,855 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2024-38-index?url=%2A.osnepal.com%2F%2A&output=json. Retry 1/8 in 1.35s
-2025-04-20 15:28:50,207 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
-2025-04-20 15:28:52,838 - INFO - Waiting 22.17s before processing: CC-MAIN-2024-33
-2025-04-20 15:29:15,007 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2024-33-index?url=%2A.osnepal.com%2F%2A&output=json
-2025-04-20 15:29:15,008 - INFO - Using agent: Mozilla/5.0 (compatible; anthropic-ai/1.0; +http://www.anthropic.com/bot.html)
-2025-04-20 15:29:19,581 - WARNING - Process interrupted by user
-2025-04-20 15:29:19,584 - INFO - Saved state at index 9, domain: osnepal.com
-2025-04-20 15:29:19,585 - INFO - State saved, you can resume later
-2025-04-20 15:29:19,585 - INFO - Process completed or interrupted. Processed 10 domains.
+2025-06-18 16:29:04,713 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.%2F%2A&output=json
+2025-06-18 16:29:04,713 - INFO - Using agent: Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/8.0 Mobile/12F70 Safari/600.1.4 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+2025-06-18 16:29:10,694 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.%2F%2A&output=json. Retry 1/8 in 2.26s
+2025-06-18 16:29:12,959 - INFO - Using agent: Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12F70 Safari/600.1.4 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+2025-06-18 16:29:25,894 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.%2F%2A&output=json. Retry 2/8 in 4.37s
+2025-06-18 16:29:30,269 - INFO - Using agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)
+2025-06-18 16:29:36,145 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.%2F%2A&output=json. Retry 3/8 in 7.84s
+2025-06-18 16:29:36,145 - INFO - Multiple consecutive failures. Creating new session.
+2025-06-18 16:29:43,987 - INFO - Using agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1)
+2025-06-18 16:29:49,864 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.%2F%2A&output=json. Retry 4/8 in 23.61s
+2025-06-18 16:30:01,643 - WARNING - Keyboard interrupt during request for CC-MAIN-2025-18
+2025-06-18 16:30:01,644 - WARNING - Search interrupted at index CC-MAIN-2025-18 for domain 
+2025-06-18 16:30:01,644 - INFO - Completed 0/2 indices before interruption
+2025-06-18 16:30:01,645 - WARNING - Process interrupted by user
+2025-06-18 16:30:01,645 - INFO - State saved at last successfully completed domain. Incomplete domain will be retried on resume.
+2025-06-18 16:30:01,645 - INFO - Process completed. Total domains processed: 0
+2025-06-18 16:32:28,659 - INFO - Logging system initialized successfully
+2025-06-18 16:32:28,659 - INFO - No previous state found, starting fresh
+2025-06-18 16:32:28,659 - INFO - Starting to process 6 JSON files from file index 0, domain index 0
+2025-06-18 16:32:28,659 - INFO - Processing file 1/6: bisalnepal.json
+2025-06-18 16:32:28,695 - INFO - Processing file 1/6, domain 1/19050: 
+2025-06-18 16:32:28,696 - INFO - Starting processing of all indices for domain: 
+2025-06-18 16:32:28,696 - INFO - Starting search for domain:  across 2 indices
+2025-06-18 16:32:28,696 - INFO - Processing index 1/2: CC-MAIN-2025-18 for domain 
+2025-06-18 16:32:28,696 - INFO - Waiting 21.78s before processing: CC-MAIN-2025-18
+2025-06-18 16:32:47,892 - WARNING - Search interrupted at index CC-MAIN-2025-18 for domain 
+2025-06-18 16:32:47,893 - INFO - Completed 0/2 indices before interruption
+2025-06-18 16:32:47,893 - WARNING - Process interrupted by user
+2025-06-18 16:32:47,893 - INFO - State saved at last successfully completed domain. Incomplete domain will be retried on resume.
+2025-06-18 16:32:47,894 - INFO - Process completed. Total domains processed: 0
+2025-06-18 16:33:37,342 - INFO - Logging system initialized successfully
+2025-06-18 16:33:37,342 - INFO - No previous state found, starting fresh
+2025-06-18 16:33:37,342 - INFO - Starting to process 149 JSON files from file index 0, domain index 0
+2025-06-18 16:33:37,343 - INFO - Processing file 1/149: aajakonews.json
+2025-06-18 16:33:37,347 - INFO - Processing file 1/149, domain 1/1: aajakonews.com
+2025-06-18 16:33:37,347 - INFO - Starting processing of all indices for domain: aajakonews.com
+2025-06-18 16:33:37,347 - INFO - Starting search for domain: aajakonews.com across 2 indices
+2025-06-18 16:33:37,348 - INFO - Processing index 1/2: CC-MAIN-2025-18 for domain aajakonews.com
+2025-06-18 16:33:37,348 - INFO - Waiting 28.15s before processing: CC-MAIN-2025-18
+2025-06-18 16:34:06,357 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.aajakonews.com%2F%2A&output=json
+2025-06-18 16:34:06,357 - INFO - Using agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2025-06-18 16:34:18,316 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.aajakonews.com%2F%2A&output=json. Retry 1/8 in 2.92s
+2025-06-18 16:34:21,235 - INFO - Using agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15
+2025-06-18 16:34:33,160 - WARNING - Request failed (HTTPError): 504 Server Error: Gateway Time-out for url: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.aajakonews.com%2F%2A&output=json. Retry 2/8 in 4.62s
+2025-06-18 16:34:34,253 - WARNING - Keyboard interrupt during request for CC-MAIN-2025-18
+2025-06-18 16:34:34,253 - WARNING - Search interrupted at index CC-MAIN-2025-18 for domain aajakonews.com
+2025-06-18 16:34:34,253 - INFO - Completed 0/2 indices before interruption
+2025-06-18 16:34:34,253 - WARNING - Process interrupted by user
+2025-06-18 16:34:34,254 - INFO - State saved at last successfully completed domain. Incomplete domain will be retried on resume.
+2025-06-18 16:34:34,254 - INFO - Process completed. Total domains processed: 0
+2025-06-18 16:57:48,024 - INFO - Logging system initialized successfully
+2025-06-18 16:57:48,024 - INFO - No previous state found, starting fresh
+2025-06-18 16:57:48,024 - INFO - Starting to process 149 JSON files from file index 0, domain index 0
+2025-06-18 16:57:48,024 - INFO - Processing file 1/149: aajakonews.json
+2025-06-18 16:57:48,028 - INFO - Processing file 1/149, domain 1/1: aajakonews.com
+2025-06-18 16:57:48,028 - INFO - Starting processing of all indices for domain: aajakonews.com
+2025-06-18 16:57:48,029 - INFO - Starting search for domain: aajakonews.com across 2 indices
+2025-06-18 16:57:48,029 - INFO - Processing index 1/2: CC-MAIN-2025-18 for domain aajakonews.com
+2025-06-18 16:57:48,029 - INFO - Waiting 27.58s before processing: CC-MAIN-2025-18
+2025-06-18 16:58:16,037 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.aajakonews.com%2F%2A&output=json
+2025-06-18 16:58:16,037 - INFO - Using agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2025-06-18 16:58:17,595 - INFO - Processing 82 lines from CC-MAIN-2025-18
+2025-06-18 16:58:17,597 - INFO - Successfully processed CC-MAIN-2025-18: found 79 valid URLs from 82 total lines
+2025-06-18 16:58:17,597 - INFO - Completed 1/2 indices for domain aajakonews.com
+2025-06-18 16:58:17,597 - INFO - Processing index 2/2: CC-MAIN-2025-21 for domain aajakonews.com
+2025-06-18 16:58:17,597 - INFO - Waiting 20.63s before processing: CC-MAIN-2025-21
+2025-06-18 16:58:38,604 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-21-index?url=%2A.aajakonews.com%2F%2A&output=json
+2025-06-18 16:58:38,604 - INFO - Using agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15
+2025-06-18 16:58:39,260 - INFO - Processing 85 lines from CC-MAIN-2025-21
+2025-06-18 16:58:39,262 - INFO - Successfully processed CC-MAIN-2025-21: found 79 valid URLs from 85 total lines
+2025-06-18 16:58:39,262 - INFO - Completed 2/2 indices for domain aajakonews.com
+2025-06-18 16:58:39,262 - INFO - Successfully completed search for domain aajakonews.com: 2 indices processed, 167 total lines
+2025-06-18 16:58:39,263 - INFO - Prepared new index for stack addition: CC-MAIN-2025-18 with 79 URLs
+2025-06-18 16:58:39,263 - INFO - Prepared new index for stack addition: CC-MAIN-2025-21 with 79 URLs
+2025-06-18 16:58:39,263 - INFO - Added index to top of stack: CC-MAIN-2025-18
+2025-06-18 16:58:39,263 - INFO - Added index to top of stack: CC-MAIN-2025-21
+2025-06-18 16:58:39,263 - INFO - Successfully updated domain: aajakonews.com - Added 2 new indices with 167 total lines
+2025-06-18 16:58:39,264 - INFO - Completed processing all indices for domain: aajakonews.com
+2025-06-18 16:58:39,264 - INFO - Saved state at file 0, domain 0: aajakonews.com
+2025-06-18 16:58:39,265 - INFO - Saved state after successful completion of domain: aajakonews.com
+2025-06-18 16:58:39,277 - INFO - Saved updated file: aajakonews.json
+2025-06-18 16:58:39,277 - INFO - Processing file 2/149: aarthiknews.json
+2025-06-18 16:58:39,299 - INFO - Processing file 2/149, domain 1/1: aarthiknews.com
+2025-06-18 16:58:39,299 - INFO - Starting processing of all indices for domain: aarthiknews.com
+2025-06-18 16:58:39,299 - INFO - Starting search for domain: aarthiknews.com across 2 indices
+2025-06-18 16:58:39,299 - INFO - Processing index 1/2: CC-MAIN-2025-18 for domain aarthiknews.com
+2025-06-18 16:58:39,300 - INFO - Waiting 22.41s before processing: CC-MAIN-2025-18
+2025-06-18 16:59:02,306 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.aarthiknews.com%2F%2A&output=json
+2025-06-18 16:59:02,306 - INFO - Using agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/113.0
+2025-06-18 16:59:11,186 - INFO - Processing 1521 lines from CC-MAIN-2025-18
+2025-06-18 16:59:11,204 - INFO - Successfully processed CC-MAIN-2025-18: found 1313 valid URLs from 1521 total lines
+2025-06-18 16:59:11,205 - INFO - Completed 1/2 indices for domain aarthiknews.com
+2025-06-18 16:59:11,205 - INFO - Processing index 2/2: CC-MAIN-2025-21 for domain aarthiknews.com
+2025-06-18 16:59:11,205 - INFO - Waiting 26.59s before processing: CC-MAIN-2025-21
+2025-06-18 16:59:25,576 - WARNING - Search interrupted at index CC-MAIN-2025-21 for domain aarthiknews.com
+2025-06-18 16:59:25,577 - INFO - Completed 1/2 indices before interruption
+2025-06-18 16:59:25,577 - WARNING - Process interrupted by user
+2025-06-18 16:59:25,577 - INFO - State saved at last successfully completed domain. Incomplete domain will be retried on resume.
+2025-06-18 16:59:25,578 - INFO - Process completed. Total domains processed: 1
+2025-06-18 16:59:29,020 - INFO - Logging system initialized successfully
+2025-06-18 16:59:29,021 - INFO - Loaded previous state: file 0, domain 0, last domain: aajakonews.com
+2025-06-18 16:59:29,021 - INFO - Starting to process 149 JSON files from file index 0, domain index 0
+2025-06-18 16:59:29,021 - INFO - Processing file 1/149: aajakonews.json
+2025-06-18 16:59:29,025 - INFO - Processing file 1/149, domain 1/1: aajakonews.com
+2025-06-18 16:59:29,025 - INFO - Starting processing of all indices for domain: aajakonews.com
+2025-06-18 16:59:29,026 - INFO - Starting search for domain: aajakonews.com across 2 indices
+2025-06-18 16:59:29,026 - INFO - Processing index 1/2: CC-MAIN-2025-18 for domain aajakonews.com
+2025-06-18 16:59:29,026 - INFO - Waiting 20.16s before processing: CC-MAIN-2025-18
+2025-06-18 16:59:50,033 - INFO - Querying index at: https://index.commoncrawl.org/CC-MAIN-2025-18-index?url=%2A.aajakonews.com%2F%2A&output=json
+2025-06-18 16:59:50,033 - INFO - Using agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2025-06-18 17:00:03,161 - INFO - Processing 82 lines from CC-MAIN-2025-18
+2025-06-18 17:00:03,162 - INFO - Successfully processed CC-MAIN-2025-18: found 79 valid URLs from 82 total lines
+2025-06-18 17:00:03,162 - INFO - Completed 1/2 indices for domain aajakonews.com
+2025-06-18 17:00:03,163 - INFO - Processing index 2/2: CC-MAIN-2025-21 for domain aajakonews.com
+2025-06-18 17:00:03,163 - INFO - Waiting 28.68s before processing: CC-MAIN-2025-21
+2025-06-18 17:00:08,673 - WARNING - Search interrupted at index CC-MAIN-2025-21 for domain aajakonews.com
+2025-06-18 17:00:08,673 - INFO - Completed 1/2 indices before interruption
+2025-06-18 17:00:08,674 - WARNING - Process interrupted by user
+2025-06-18 17:00:08,674 - INFO - State saved at last successfully completed domain. Incomplete domain will be retried on resume.
+2025-06-18 17:00:08,674 - INFO - Process completed. Total domains processed: 0
